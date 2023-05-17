@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/hamr-time/static/css/main.824c140a.css",
+    "main.js": "/hamr-time/static/js/main.a1418391.js",
+    "static/js/553.77b75a5a.js": "/hamr-time/static/js/553.77b75a5a.js",
+    "static/media/background_img.png": "/hamr-time/static/media/background_img.4ea4b3a391be6754c21c.png",
+    "static/media/samplesound.wav": "/hamr-time/static/media/samplesound.d00fd8d48c5ffeebc4c8.wav",
+    "static/media/OpenSans-Italic.ttf": "/hamr-time/static/media/OpenSans-Italic.2e8d5e3e2ba4653d9fe3.ttf",
+    "static/media/OpenSans-BoldItalic.ttf": "/hamr-time/static/media/OpenSans-BoldItalic.9b5f41e543dbb95e56f7.ttf",
+    "static/media/OpenSans-Bold.ttf": "/hamr-time/static/media/OpenSans-Bold.728c265bc5aed977c34f.ttf",
+    "static/media/OpenSans-Regular.ttf": "/hamr-time/static/media/OpenSans-Regular.a5fe783dd47c116806f9.ttf",
+    "favicon.ico": "/hamr-time/favicon.ico",
+    "index.html": "/hamr-time/index.html",
+    "favicon-32.png": "/hamr-time/favicon-32.png",
+    "favicon-16.png": "/hamr-time/favicon-16.png",
+    "manifest.json": "/hamr-time/manifest.json",
+    "serve.json": "/hamr-time/serve.json",
+    "main.824c140a.css.map": "/hamr-time/static/css/main.824c140a.css.map",
+    "main.a1418391.js.map": "/hamr-time/static/js/main.a1418391.js.map",
+    "553.77b75a5a.js.map": "/hamr-time/static/js/553.77b75a5a.js.map"
+  },
+  "entrypoints": [
+    "static/js/553.77b75a5a.js",
+    "static/css/main.824c140a.css",
+    "static/js/main.a1418391.js"
+  ]
+}
