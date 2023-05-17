@@ -129,7 +129,7 @@ const TestAdmin = () => {
       
         if (seconds === 0) {
           // Path to the audio file for the beginning of the interval
-          audioFile = require('../assets/intervalSound.wav');
+          audioFile = require('../assets/samplesound.wav');
         } else {
           // Path to the audio file for each second of the countdown
           audioFile = require('../assets/samplesound.wav');
