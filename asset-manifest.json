@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/hamr-time/static/css/main.824c140a.css",
-    "main.js": "/hamr-time/static/js/main.6bc77077.js",
-    "static/js/637.69175454.js": "/hamr-time/static/js/637.69175454.js",
+    "main.js": "/hamr-time/static/js/main.f9bb3877.js",
+    "static/js/553.77b75a5a.js": "/hamr-time/static/js/553.77b75a5a.js",
     "static/media/background_img.png": "/hamr-time/static/media/background_img.4ea4b3a391be6754c21c.png",
     "static/media/samplesound.wav": "/hamr-time/static/media/samplesound.d00fd8d48c5ffeebc4c8.wav",
     "static/media/OpenSans-Italic.ttf": "/hamr-time/static/media/OpenSans-Italic.2e8d5e3e2ba4653d9fe3.ttf",
@@ -16,12 +16,12 @@
     "manifest.json": "/hamr-time/manifest.json",
     "serve.json": "/hamr-time/serve.json",
     "main.824c140a.css.map": "/hamr-time/static/css/main.824c140a.css.map",
-    "main.6bc77077.js.map": "/hamr-time/static/js/main.6bc77077.js.map",
-    "637.69175454.js.map": "/hamr-time/static/js/637.69175454.js.map"
+    "main.f9bb3877.js.map": "/hamr-time/static/js/main.f9bb3877.js.map",
+    "553.77b75a5a.js.map": "/hamr-time/static/js/553.77b75a5a.js.map"
   },
   "entrypoints": [
-    "static/js/637.69175454.js",
+    "static/js/553.77b75a5a.js",
     "static/css/main.824c140a.css",
-    "static/js/main.6bc77077.js"
+    "static/js/main.f9bb3877.js"
   ]
 }
