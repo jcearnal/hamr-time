@@ -73,28 +73,7 @@ const TestAdmin = () => {
     return () => clearInterval(countdownInterval);
   }, [countdown, testStarted, currentShuttle]); // Added currentShuttle to the dependency array
 
-    
-      
   
-      // const handleNextShuttle = () => {
-      //   const currentLevel = currentShuttle.level;
-      //   const currentIteration = currentShuttle.iteration;
-      
-      //   if (currentIteration === testData[currentLevel - 1].shuttles) {
-      //     if (currentLevel === testData.length) {
-      //       console.log('Test Completed');
-      //       // Add logic to handle the completion of the test
-      //     } else {
-      //       setCurrentShuttle({ level: currentLevel + 1, iteration: 1 });
-      //       setTimeRemaining(testData[currentLevel].shuttleTime); // Changed from currentLevel to currentLevel - 1
-      //       setCumulativeTime((prevTime) => prevTime + testData[currentLevel - 1].shuttleTime);
-      //     }
-      //   } else {
-      //     setCurrentShuttle({ level: currentLevel, iteration: currentIteration + 1 });
-      //     setTimeRemaining(testData[currentLevel - 1].shuttleTime); // Removed -1
-      //     setCumulativeTime((prevTime) => prevTime + testData[currentLevel - 1].shuttleTime);
-      //   }
-      // };     
       const handleNextShuttle = () => {
         const currentLevel = currentShuttle.level;
         const currentIteration = currentShuttle.iteration;
@@ -124,20 +103,29 @@ const TestAdmin = () => {
       
     
 
-      const playAudioDing = (level, seconds) => {
-        let audioFile;
+      const playAudioDing = async (level) => {
+        // Path to the audio file for the beginning of the interval
+        const audioFile = require('../assets/samplesound.wav');
       
-        if (seconds === 0) {
-          // Path to the audio file for the beginning of the interval
-          // audioFile = require('../assets/samplesound.wav');
-        } else {
-          // Path to the audio file for each second of the countdown
-          audioFile = require('../assets/samplesound.wav');
-        }
+        // Create an AudioContext instance
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
       
-        // Create an Audio object and play the audio file
-        const audio = new Audio(audioFile);
-        audio.play();
+        // Fetch the audio file
+        const response = await fetch(audioFile);
+        const arrayBuffer = await response.arrayBuffer();
+      
+        // Decode the audio file
+        const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+      
+        // Create an AudioBufferSourceNode
+        const sourceNode = audioContext.createBufferSource();
+        sourceNode.buffer = audioBuffer;
+      
+        // Connect the source node to the audio context's destination (speakers)
+        sourceNode.connect(audioContext.destination);
+      
+        // Start playing the audio
+        sourceNode.start();
       };
       
       
