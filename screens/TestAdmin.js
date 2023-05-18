@@ -103,31 +103,24 @@ const TestAdmin = () => {
       
     
 
-      const playAudioDing = async (level) => {
-        // Path to the audio file for the beginning of the interval
-        const audioFile = require('../assets/samplesound.wav');
+      const playAudioDing = (seconds) => {
+        let audioFile;
       
-        // Create an AudioContext instance
-        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+        if (seconds === 0) {
+          // Path to the audio file for the beginning of the interval
+          audioFile = require('../assets/samplesound.wav');
+        } else {
+          // Path to the audio file for each second of the countdown
+          audioFile = require('../assets/samplesound.wav');
+        }
       
-        // Fetch the audio file
-        const response = await fetch(audioFile);
-        const arrayBuffer = await response.arrayBuffer();
-      
-        // Decode the audio file
-        const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
-      
-        // Create an AudioBufferSourceNode
-        const sourceNode = audioContext.createBufferSource();
-        sourceNode.buffer = audioBuffer;
-      
-        // Connect the source node to the audio context's destination (speakers)
-        sourceNode.connect(audioContext.destination);
-      
-        // Start playing the audio
-        sourceNode.start();
+        // Create an Audio object and play the audio file
+        const audio = new Audio(audioFile);
+        audio.play().catch((error) => {
+          // Handle the error here, such as logging or displaying a message to the user
+          console.error('Error playing audio:', error);
+        });
       };
-      
       
       
       const formatTime = (time) => {
@@ -136,13 +129,16 @@ const TestAdmin = () => {
         return `${minutes}:${seconds.toString().padStart(2, '0')}`;
       };
   
-    const startTest = () => {
-      setTestStarted(true);
-      setCurrentShuttle({ level: 1, iteration: 1 });
-      setCumulativeTime(0);
-      setTimeRemaining(testData[0].shuttleTime);
-      setCountdown(3);
-    };
+      const startTest = () => {
+        setTestStarted(true);
+        setCurrentShuttle({ level: 1, iteration: 1 });
+        setCumulativeTime(0);
+        setTimeRemaining(testData[0].shuttleTime);
+        setCountdown(3);
+        
+        // Play audio on start test
+        playAudioDing(0);
+      };
   
     const stopTest = () => {
       setTestStarted(false);
